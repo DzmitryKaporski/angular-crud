@@ -1,5 +1,7 @@
 # deploy: [angular-CRUD](https://angular-crud_dzmitry-kaporski.surge.sh/)
 
+[![ ](https://ltdfoto.ru/images/2022/04/05/Screenshot-2022-04-05-225825.png)](https://angular-crud_dzmitry-kaporski.surge.sh/)
+
 # CustomerData
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
