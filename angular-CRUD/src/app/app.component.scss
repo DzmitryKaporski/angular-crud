@@ -1,0 +1,37 @@
+.title {
+  padding-top: 600px;
+}
+
+.header {
+  height: 700px;
+  margin: -600px 2rem 0 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
+  position: relative;
+  animation-name: header;
+  animation-duration: 3s;
+}
+
+.absolute {
+  position: absolute;
+  margin: 15rem 0 0 -8rem;
+}
+
+@keyframes header {
+  0% {
+    background-color: white;
+    top: 600px;
+  }
+
+  30% {
+    background-color: white;
+    top: 600px;
+  }
+
+  100% {
+    background-color: white;
+    top: 0px;
+  }
+}
