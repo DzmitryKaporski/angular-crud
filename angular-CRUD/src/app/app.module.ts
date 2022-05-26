@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-import { CustomerDetailsComponent } from './customer-details/customer-details.component';
-import { CustomersListComponent } from './customers-list/customers-list.component';
-import { CustomersHostComponent } from './customers-host/customers-host.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { CustomersHostComponent } from './customers-host/customers-host.component';
+import { CustomersListComponent } from './customers-list/customers-list.component';
+import { FormRegistrationComponent } from './form-registration/form-registration.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CustomerDetailsComponent,
     CustomersListComponent,
     CustomersHostComponent,
+    FormRegistrationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,37 +1,77 @@
 .title {
-  padding-top: 600px;
+  margin-top: 15px;
 }
 
-.header {
-  height: 700px;
-  margin: -600px 2rem 0 2rem;
+.registration-success {
+  margin: -600px 1rem 0 1rem;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
   border-radius: 1rem;
   text-align: center;
+  background-color: white;
   box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
   position: relative;
-  animation-name: header;
-  animation-duration: 3s;
+  animation-name: registration-success;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
-.absolute {
-  position: absolute;
-  margin: 15rem 0 0 -8rem;
-}
+@keyframes registration-success {
+  from {
+    top: 0;
+  }
 
-@keyframes header {
-  0% {
-    background-color: white;
+  to {
     top: 600px;
   }
 
-  30% {
-    background-color: white;
+}
+
+.registration-danger {
+  margin: -600px 1rem 0 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
+  position: relative;
+  animation-name: registration-danger;
+  animation-duration: 2s;
+}
+
+@keyframes registration-danger {
+  from {
     top: 600px;
   }
 
-  100% {
-    background-color: white;
-    top: 0px;
+  to {
+    top: 0;
   }
+}
+
+.button-registration {
+  margin: 0 0 -2.2rem 93.2%;
+  padding: 0.5rem;
+  width: 8.5%;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  border-bottom-left-radius: 150rem;
+  border-bottom-right-radius: 150rem;
+  background-color: white;
+  color: grey;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
+}
+
+.button-registration-success {
+  color: green;
 }

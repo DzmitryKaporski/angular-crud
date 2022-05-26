@@ -19,7 +19,7 @@ form .ng-invalid {
   width: 100%;
   padding: 1rem;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: normal;
   border: none;
   border-radius: 1rem;
   text-align: center;
@@ -31,7 +31,7 @@ form .ng-invalid {
   cursor: pointer;
 
   &:hover {
-    font-weight: normal;
+    font-weight: bold;
     box-shadow: inset 0 -10px 10px 0 rgba(82, 71, 71, 0.301);
   }
 }

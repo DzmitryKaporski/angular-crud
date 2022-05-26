@@ -1,9 +1,10 @@
-<div class="header">
-  <img
-    class="absolute"
-    src="../assets/angular-website-development.gif"
-    alt="logo Angular"
-  />
+<div class="registration-success" [ngClass]="status ? 'registration-success':'registration-danger'">
+  <div class="wrap">
+    <div class="title-registration">Registration</div>
+    <app-form-registration> </app-form-registration>
+  </div>
   <h1 class="title">Angular CRUD application</h1>
+  <button class="button-registration" [ngClass]="status ? 'button-registration-success':''"
+    (click)="isRregistration()">Registration</button>
 </div>
 <app-customers-host></app-customers-host>

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'customer-data';
+  title: string = 'customer-data';
+  status: boolean = false;
+
+  isRregistration(): void {
+    this.status = !this.status
+  }
 }
