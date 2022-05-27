@@ -18,28 +18,6 @@ td {
   background-clip: text;
 }
 
-.wrap {
-  width: 40rem;
-  margin: 8rem 0 8rem 0;
-  animation-name: wrap;
-  animation-duration: 3s;
-}
-
-@keyframes wrap {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-
-}
-
 .title-registration {
   font-size: 20px;
   font-weight: bold;

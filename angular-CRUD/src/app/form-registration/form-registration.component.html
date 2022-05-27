@@ -1,50 +1,58 @@
-<form (submit)="onSubmit()" [formGroup]="userForm">
-  <p>
-    <label for="name">*{{ formLabels.name }}:
-      <span *ngIf="userForm.get('name')?.hasError('minlength')" class="alert alert-danger">
-        Minlength 4 symbol
-      </span>
-      <span *ngIf="userForm.get('name')?.hasError('maxlength')" class="alert alert-danger">
-        Maxlength 15 symbol
-      </span>
-    </label>
-    <input formControlName="name" type="text" id="name" placeholder="{{ formPlaceholder.name }}" />
-  </p>
+<div class="registration-success" [ngClass]="statusRegistration ? 'registration-success':'registration-danger'">
+  <div class="wrap-registration-form" [ngClass]="statusRegistration ? 'opacity-success':'opacity-danger'">
+    <div class="title-registration">Registration</div>
+    <form (submit)="onSubmit()" [formGroup]="userForm">
+      <p>
+        <label for="name">*{{ formLabels.name }}:
+          <span *ngIf="userForm.get('name')?.hasError('minlength')" class="alert alert-danger">
+            Minlength 4 symbol
+          </span>
+          <span *ngIf="userForm.get('name')?.hasError('maxlength')" class="alert alert-danger">
+            Maxlength 8 symbol
+          </span>
+        </label>
+        <input formControlName="name" type="text" id="name" placeholder="{{ formPlaceholder.name }}" />
+      </p>
 
-  <p>
-    <button type="button" class="buttonPassword" (click)="showHidePassword()" *ngIf="userForm.value.password">
-      {{formLabels.password }}
-      <img src="https://img.icons8.com/ios/500/show-password.png" alt="img" />
-      :
-      <span *ngIf="
-          userForm.get('password')?.hasError('minlength') &&
-          userForm.get('password')?.touched
-        " class="alert alert-danger">
-        Minlength 8 symbol
-      </span>
-    </button>
+      <p>
+        <button type="button" class="buttonPassword" (click)="showHidePassword()" *ngIf="userForm.value.password">
+          {{formLabels.password }}
+          <img class="img-password" src="https://img.icons8.com/ios/500/show-password.png" alt="see password" />
+          :
+          <span *ngIf="
+            userForm.get('password')?.hasError('minlength') &&
+            userForm.get('password')?.touched
+          " class="alert alert-danger">
+            Minlength 8 symbol
+          </span>
+        </button>
+        <label *ngIf="!userForm.value.password" for="password">*Password: </label>
+        <input formControlName="password" type="{{ typePassword }}" id="password"
+          placeholder="{{ formPlaceholder.password }}" />
+      </p>
 
-    <label *ngIf="!userForm.value.password" for="password">*Password: </label>
-    <input formControlName="password" type="{{ typePassword }}" id="password"
-      placeholder="{{ formPlaceholder.password }}" />
-  </p>
-
-  <p>
-    <label for="email">*{{ formLabels.email }}:
-      <span *ngIf="userForm.get('email')?.hasError('pattern')" class="alert alert-danger">
-        Wrong format email
-      </span>
-    </label>
-    <input formControlName="email" type="email" id="email" placeholder="{{ formPlaceholder.email }}" />
-  </p>
-  <button class="button-save" type="submit" [disabled]="userForm.invalid" (click)="isRregistration()">
-    <span *ngIf="userForm.invalid">Fields with an asterisk are required</span>
-    <span *ngIf="!userForm.invalid">Save</span>
-  </button>
-</form>
-
-
-<div class="popup-user-out" [ngClass]="status ? 'popup-user-in':''">
-  <button class="button-log-out" type="button" (click)="isLogOut()">Log out</button>
-  <h1 class="title">Welcome {{userName}}</h1>
+      <p>
+        <label for="email">*{{ formLabels.email }}:
+          <span *ngIf="userForm.get('email')?.hasError('pattern')" class="alert alert-danger">
+            Wrong format email
+          </span>
+        </label>
+        <input formControlName="email" type="email" id="email" placeholder="{{ formPlaceholder.email }}" />
+      </p>
+      <button class="button-save" type="submit" [disabled]="userForm.invalid" (click)="isFormRegistartion()">
+        <span class="button-save-unvalid" *ngIf="userForm.invalid">Fields with an asterisk are required</span>
+        <span class="button-save-valid" *ngIf="!userForm.invalid">Save</span>
+      </button>
+    </form>
+  </div>
+  <div class="popup-user-out" [ngClass]="statusPopup ? 'popup-user-in':''">
+    <span class="title-wrap">
+      <h1 class=" title-logout">Welcome {{userName}}</h1>
+      <img class="img-logout" (click)="isFormRegistartion()"
+        src="https://us.123rf.com/450wm/faysalfarhan/faysalfarhan1710/faysalfarhan171011434/88836773-logout-isolated-on-elegant-red-round-button-abstract-illustration.jpg?ver=6"
+        alt="">
+    </span>
+  </div>
+  <h1 class="title">Angular CRUD application</h1>
 </div>
+<app-customers-host></app-customers-host>

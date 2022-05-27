@@ -28,18 +28,9 @@ form {
   border: none;
 }
 
-img {
-  width: 10px;
-  height: 10px;
-  background-size: cover;
-}
-
-legend {
-  color: red;
-  padding: 0.2rem;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(128, 128, 128, 0.712);
-  background-color: rgba(128, 128, 128, 0.13);
+.wrap-registration-form {
+  width: 40rem;
+  margin: 8rem 0 8rem 0;
 }
 
 label {
@@ -62,7 +53,7 @@ input {
   width: 60%;
   height: 4rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 1rem;
   background-color: white;
   font-weight: normal;
   font-size: 20px;
@@ -79,6 +70,14 @@ input {
   }
 }
 
+.button-save-valid {
+  color: green;
+}
+
+.button-save-unvalid {
+  color: red;
+}
+
 .buttonPassword {
   margin: 0;
   padding: 0;
@@ -93,54 +92,117 @@ input {
   }
 }
 
-.registration-danger {
+.opacity-danger {
   opacity: 0;
 }
 
-.registration-success {
+.opacity-success {
   opacity: 1;
 }
 
+.registration-success {
+  margin: -600px 1rem 0 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
+  position: relative;
+  animation-name: registration-success;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes registration-success {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: 600px;
+  }
+}
+
 .registration-danger {
-  position: absolute;
-  outline: solid 1px red;
+  margin: -600px 1rem 0 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
+  position: relative;
+  animation-name: registration-danger;
+  animation-duration: 1s;
+}
+
+@keyframes registration-danger {
+  from {
+    top: 600px;
+  }
+
+  to {
+    top: 0;
+  }
 }
 
 .popup-user-out {
-  display: none;
-}
-
-.popup-user-in {
-  width: 40rem;
-  height: 25rem;
+  width: auto;
+  height: auto;
   display: block;
   position: absolute;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  margin: -22rem 0 0 0;
-  background-color: white;
+  margin: 38rem 0 0 75%;
+  opacity: 0;
+  transition: 1s;
 }
 
-.button-log-out {
-  margin-top: 1rem;
-  width: 50%;
-  padding: 1rem;
-  font-size: 25px;
-  font-weight: normal;
-  border: none;
-  border-radius: 1rem;
-  text-align: center;
-  box-shadow: 0 20px 10px rgba(135, 122, 122, 0.469);
-  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
-  background-color: #565656;
-  color: transparent;
-  background-clip: text;
-  cursor: pointer;
+.popup-user-in {
+  width: auto;
+  height: auto;
+  display: block;
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin: 38rem 0 0 75%;
+  opacity: 1;
+}
+
+.title-wrap {
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+
+.title-logout {
+  width: 23rem;
+}
+
+.img-logout {
+  width: 4.5rem;
+  height: 4rem;
 
   &:hover {
-    font-weight: bold;
-    box-shadow: inset 0 -10px 10px 0 rgba(82, 71, 71, 0.301);
+    cursor: pointer;
   }
+}
+
+.img-password {
+  width: 10px;
+  height: 10px;
+  background-size: cover;
 }

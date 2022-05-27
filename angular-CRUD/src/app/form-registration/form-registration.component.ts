@@ -9,14 +9,15 @@ import { User } from '../shared/user';
   styleUrls: ['./form-registration.component.scss']
 })
 export class FormRegistrationComponent implements OnInit {
-  typePassword: string = 'password'
-  messageForPassword: string = 'Show password'
-  status: boolean = false
-  userName: string = ''
+  typePassword: string = 'password';
+  messageForPassword: string = 'Show password';
+  statusRegistration: boolean = true;
+  statusPopup: boolean = false;
+  userName: string = '';
 
   userForm!: FormGroup
-  roles: string[] = ['Guest', 'Moderator', 'Admin']
-  user: User = new User(1, null, null, null)
+  roles: string[] = ['Guest', 'Moderator', 'Admin'];
+  user: User = new User(1, null, null, null);
 
   formLabels = {
     name: "Name",
@@ -25,47 +26,45 @@ export class FormRegistrationComponent implements OnInit {
   }
 
   formPlaceholder = {
-    name: "Required field",
-    password: "Required field",
-    email: "Required field",
+    name: "",
+    password: "",
+    email: "",
   }
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.buildForm()
-    this.createControls()
+    this.buildForm();
+    this.createControls();
   }
 
   private buildForm(): void {
     this.userForm = this.formBuilder.group({
-      name: [this.user.name, [Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
+      name: [this.user.name, [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
       password: [this.user.password, [Validators.required, Validators.minLength(8)]],
       email: [this.user.email, [Validators.required, Validators.pattern(/^[A-Za-z0-9][A-Za-z0-9\.-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$/)]],
     })
   }
 
   onSubmit(): void {
-    console.log(this.userForm.value)
-    this.userName = this.userForm.value.name
-    this.createControls()
+    console.log(this.userForm.value);
+    this.userName = this.userForm.value.name;
+    this.createControls();
   }
 
   private createControls(): void {
-    this.userForm.controls['name'].setValue('')
-    this.userForm.controls['password'].setValue('')
-    this.userForm.controls['email'].setValue('')
+    this.userForm.controls['name'].setValue('');
+    this.userForm.controls['password'].setValue('');
+    this.userForm.controls['email'].setValue('');
   }
 
   showHidePassword(): void {
-    this.typePassword === 'password' ? this.typePassword = 'text' : this.typePassword = 'password'
-    this.formLabels.password === 'Hide password' ? this.formLabels.password = 'Show password' : this.formLabels.password = 'Hide password'
+    this.typePassword === 'password' ? this.typePassword = 'text' : this.typePassword = 'password';
+    this.formLabels.password === 'Hide password' ? this.formLabels.password = 'Show password' : this.formLabels.password = 'Hide password';
   }
 
-  isRregistration() {
-    this.status = true
-  }
-  isLogOut() {
-    this.status = false
+  isFormRegistartion() {
+    this.statusRegistration = !this.statusRegistration;
+    this.statusPopup = !this.statusPopup;
   }
 }

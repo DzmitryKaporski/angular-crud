@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../shared/http.service';
+
 import { Customer } from '../shared/customer';
+import { HttpService } from '../shared/http.service';
 
 @Component({
   selector: 'app-customers-list',
@@ -11,40 +12,40 @@ export class CustomersListComponent implements OnInit {
 
   constructor(public httpService: HttpService) { }
 
-  isEditPos: number | null = null
-  isChanged: boolean = false
-  private tempCustomer!: Customer
+  isEditPos: number | null = null;
+  isChanged: boolean = false;
+  private tempCustomer!: Customer;
 
   ngOnInit(): void {
-    this.httpService.getData()
+    this.httpService.getData();
   }
 
   editCustomer(i: number): void {
-    this.isEditPos = i
-    this.tempCustomer = this.resetCustomer()
+    this.isEditPos = i;
+    this.tempCustomer = this.resetCustomer();
   }
 
   cancelEdit(): void {
-    this.isEditPos = null
-    this.isChanged = false
+    this.isEditPos = null;
+    this.isChanged = false;
   }
 
   saveCustomer(customer: Customer, i: number): void {
     const mergeCustomer: Customer = this.mergeCustomer(customer, this.tempCustomer)
     this.httpService.updateData(mergeCustomer, i)
-    this.cancelEdit()
+    this.cancelEdit();
   }
 
   deleteCustomer(customer: Customer): void {
-    this.httpService.deleteData(customer)
+    this.httpService.deleteData(customer);
   }
 
   setValue(key: string, value: string, original: string): void {
     const valueTrim = value.trim() // обрезает пробелы если они в конце
 
     if (valueTrim !== original && valueTrim !== this.tempCustomer[key as keyof Customer]) {
-      this.tempCustomer[key as keyof Customer] = valueTrim
-      this.isChanged = true
+      this.tempCustomer[key as keyof Customer] = valueTrim;
+      this.isChanged = true;
     }
   }
 
@@ -63,7 +64,6 @@ export class CustomersListComponent implements OnInit {
         result[key] = temp[key]
       }
     }
-    return result
+    return result;
   }
-
 }

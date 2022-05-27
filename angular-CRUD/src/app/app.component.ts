@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'customer-data';
-  status: boolean = false;
-
-  isRregistration(): void {
-    this.status = !this.status
-  }
 }

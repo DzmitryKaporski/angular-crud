@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../shared/http.service';
 import { FormBuilder, Validators } from '@angular/forms';
+
+import { HttpService } from '../shared/http.service';
 
 @Component({
   selector: 'app-customer-details',
   templateUrl: './customer-details.component.html',
-  styleUrls: ['./customer-details.component.scss']
+  styleUrls: ['./customer-details.component.scss'],
 })
 export class CustomerDetailsComponent implements OnInit {
 
@@ -19,19 +20,19 @@ export class CustomerDetailsComponent implements OnInit {
   constructor(private httpService: HttpService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.createControls()
+    this.createControls();
   }
 
   onSubmit(): void {
-    this.httpService.createData(this.form.value)
-    this.createControls()
+    this.httpService.createData(this.form.value);
+    this.createControls();
   }
 
   private createControls(): void {
-    this.form.controls['name'].setValue('')
-    this.form.controls['email'].setValue('')
-    this.form.controls['mobile'].setValue('')
-    this.form.controls['location'].setValue('')
+    this.form.controls['name'].setValue('');
+    this.form.controls['email'].setValue('');
+    this.form.controls['mobile'].setValue('');
+    this.form.controls['location'].setValue('');
   }
 
 }
