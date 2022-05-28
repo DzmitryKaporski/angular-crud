@@ -17,9 +17,6 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // CRUD
-
-  // create => POST
   createData(customer: Customer): void {
     this.httpClient.post<Customer>(`${url}.json`, customer, httpOptions).subscribe(
       {
@@ -29,7 +26,6 @@ export class HttpService {
     )
   }
 
-  // read =>GET
   getData(): void {
     this.httpClient.get<Customer[]>(`${url}.json`, httpOptions).subscribe(
       {
@@ -44,7 +40,6 @@ export class HttpService {
     )
   }
 
-  // update => PUT / PATCH
   updateData(customer: Customer, i: number): void {
     const { key, ...data } = customer
     this.httpClient.put<Customer>(`${url}/${customer.key}.json`, data, httpOptions).subscribe(
@@ -55,7 +50,6 @@ export class HttpService {
     )
   }
 
-  // delete => DELETE
   deleteData(customer: Customer): void {
     this.httpClient.delete<void>(`${url}/${customer.key}.json`, httpOptions).subscribe(
       {

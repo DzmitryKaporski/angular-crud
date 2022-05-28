@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { LazyLoadingService } from './../shared/lazy-loading.service';
+
 @Component({
   selector: 'app-customers-host',
   templateUrl: './customers-host.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersHostComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sll: LazyLoadingService) { }
 
   ngOnInit(): void {
+  }
+
+  isFormRegistartion() {
+    this.sll.statusRegistration = !this.sll.statusRegistration;
+    this.sll.statusPopup = !this.sll.statusPopup;
   }
 
 }

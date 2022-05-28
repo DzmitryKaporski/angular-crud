@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { LazyLoadingService } from './../shared/lazy-loading.service';
 import { User } from '../shared/user';
 
 @Component({
@@ -31,7 +32,7 @@ export class FormRegistrationComponent implements OnInit {
     email: "",
   }
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, public sll: LazyLoadingService) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -47,7 +48,6 @@ export class FormRegistrationComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.userForm.value);
     this.userName = this.userForm.value.name;
     this.createControls();
   }
@@ -64,7 +64,7 @@ export class FormRegistrationComponent implements OnInit {
   }
 
   isFormRegistartion() {
-    this.statusRegistration = !this.statusRegistration;
-    this.statusPopup = !this.statusPopup;
+    this.sll.statusRegistration = !this.sll.statusRegistration;
+    this.sll.statusPopup = !this.sll.statusPopup;
   }
 }

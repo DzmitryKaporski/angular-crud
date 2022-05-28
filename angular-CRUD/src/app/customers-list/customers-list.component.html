@@ -6,18 +6,14 @@
   <tbody>
     <tr *ngFor="let customer of httpService.customers; let i = index">
       <th scope="row">{{ i + 1 }}</th>
-      <ng-container
-        *ngTemplateOutlet="
+      <ng-container *ngTemplateOutlet="
           isEditPos === i ? elseBlock : thenBlock;
           context: { $implicit: customer }
-        "
-      ></ng-container>
-      <ng-container
-        *ngTemplateOutlet="
+        "></ng-container>
+      <ng-container *ngTemplateOutlet="
           customerControlsBlock;
           context: { customer: customer, index: i }
-        "
-      ></ng-container>
+        "></ng-container>
     </tr>
   </tbody>
 </table>
@@ -43,74 +39,36 @@
 
 <ng-template #elseBlock let-customer>
   <td>
-    <input
-      #name
-      (blur)="setValue('name', name.value, customer.name)"
-      type="text"
-      class="form-control"
-      value="{{ customer.name }}"
-    />
+    <input #name (blur)="setValue('name', name.value, customer.name)" type="text" class="form-control"
+      value="{{ customer.name }}" />
   </td>
   <td>
-    <input
-      (blur)="setValue('email', email.value, customer.email)"
-      #email
-      type="email"
-      class="form-control"
-      value="{{ customer.email }}"
-    />
+    <input (blur)="setValue('email', email.value, customer.email)" #email type="email" class="form-control"
+      value="{{ customer.email }}" />
   </td>
   <td>
-    <input
-      (blur)="setValue('mobile', mobile.value, customer.mobile)"
-      #mobile
-      type="tel"
-      class="form-control"
-      value="{{ customer.mobile }}"
-    />
+    <input (blur)="setValue('mobile', mobile.value, customer.mobile)" #mobile type="tel" class="form-control"
+      value="{{ customer.mobile }}" />
   </td>
   <td>
-    <input
-      (blur)="setValue('location', location.value, customer.location)"
-      #location
-      type="text"
-      class="form-control"
-      value="{{ customer.location }}"
-    />
+    <input (blur)="setValue('location', location.value, customer.location)" #location type="text" class="form-control"
+      value="{{ customer.location }}" />
   </td>
 </ng-template>
 
 <ng-template #customerControlsBlock let-customer="customer" let-i="index">
   <td class="controls">
-    <button
-      (click)="editCustomer(i)"
-      *ngIf="isEditPos !== i"
-      class="btn btn-outline-info btn-sm ms-2"
-      type="button"
-    >
+    <button (click)="editCustomer(i)" *ngIf="isEditPos !== i" class="btn btn-outline-info btn-sm ms-2" type="button">
       <i class="fas fa-edit"></i>
     </button>
-    <button
-      (click)="cancelEdit()"
-      *ngIf="isEditPos === i"
-      class="btn btn-outline-info btn-sm ms-2"
-      type="button"
-    >
+    <button (click)="cancelEdit()" *ngIf="isEditPos === i" class="btn btn-outline-info btn-sm ms-2" type="button">
       <i class="fas fa-undo"></i>
     </button>
-    <button
-      (click)="saveCustomer(customer, i)"
-      *ngIf="isEditPos === i"
-      class="btn btn-outline-info btn-sm ms-2"
-      type="button"
-    >
+    <button (click)="saveCustomer(customer, i)" *ngIf="isEditPos === i" class="btn btn-outline-info btn-sm ms-2"
+      type="button">
       <i class="fas fa-save"></i>
     </button>
-    <button
-      (click)="deleteCustomer(customer)"
-      class="btn btn-outline-info btn-sm ms-2"
-      type="button"
-    >
+    <button (click)="deleteCustomer(customer)" class="btn btn-outline-info btn-sm ms-2" type="button">
       <i class="fas fa-trash"></i>
     </button>
   </td>

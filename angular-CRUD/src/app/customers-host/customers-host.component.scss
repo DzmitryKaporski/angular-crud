@@ -14,9 +14,15 @@
   box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
 }
 
+.registration-danger {
+  display: none;
+}
+
 .display-flex {
+  display: block;
   padding: 0 2rem 0 2rem;
   display: flex;
+
 }
 
 @media (max-width: 1300px) {

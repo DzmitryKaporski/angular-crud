@@ -1,5 +1,5 @@
-<div class="registration-success" [ngClass]="statusRegistration ? 'registration-success':'registration-danger'">
-  <div class="wrap-registration-form" [ngClass]="statusRegistration ? 'opacity-success':'opacity-danger'">
+<div class="registration-success" [ngClass]="sll.statusRegistration ? 'registration-success':'registration-danger'">
+  <div class="wrap-registration-form" [ngClass]="sll.statusRegistration ? 'opacity-success':'opacity-danger'">
     <div class="title-registration">Registration</div>
     <form (submit)="onSubmit()" [formGroup]="userForm">
       <p>
@@ -45,10 +45,10 @@
       </button>
     </form>
   </div>
-  <div class="popup-user-out" [ngClass]="statusPopup ? 'popup-user-in':''">
-    <span class="title-wrap">
-      <h1 class=" title-logout">Welcome {{userName}}</h1>
-      <img class="img-logout" (click)="isFormRegistartion()"
+  <div class="popup-user-out" [ngClass]="sll.statusPopup ? 'popup-user-in':''">
+    <span class="popup-title-wrap">
+      <h1 class="popup-title-logout">Welcome {{userName}}</h1>
+      <img class="popup-img-logout" (click)="isFormRegistartion()"
         src="https://us.123rf.com/450wm/faysalfarhan/faysalfarhan1710/faysalfarhan171011434/88836773-logout-isolated-on-elegant-red-round-button-abstract-illustration.jpg?ver=6"
         alt="">
     </span>
