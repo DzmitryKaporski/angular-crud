@@ -1,6 +1,4 @@
-# deploy: [angular-CRUD](https://angular-crud_dzmitry-kaporski.surge.sh/)
-
-[![ ](https://ltdfoto.ru/images/2022/04/05/Screenshot-2022-04-05-225825.png)](https://dk-angular-crud.surge.sh/)
+# deploy: [angular-CRUD](https://dk-angular-crud.surge.sh/)
 
 # CustomerData
 
