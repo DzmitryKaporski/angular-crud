@@ -63,7 +63,7 @@ export class FormRegistrationComponent implements OnInit {
     this.formLabels.password === 'Hide password' ? this.formLabels.password = 'Show password' : this.formLabels.password = 'Hide password';
   }
 
-  isFormRegistartion() {
+  isFormRegistration() {
     this.sll.statusRegistration = !this.sll.statusRegistration;
     this.sll.statusPopup = !this.sll.statusPopup;
   }

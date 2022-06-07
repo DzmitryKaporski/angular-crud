@@ -39,8 +39,8 @@
         </label>
         <input formControlName="email" type="email" id="email" placeholder="{{ formPlaceholder.email }}" />
       </p>
-      <button class="button-save" type="submit" [disabled]="userForm.invalid" (click)="isFormRegistartion()">
-        <span class="button-save-unvalid" *ngIf="userForm.invalid">Fields with an asterisk are required</span>
+      <button class="button-save" type="submit" [disabled]="userForm.invalid" (click)="isFormRegistration()">
+        <span class="button-save-unValid" *ngIf="userForm.invalid">Fields with an asterisk are required</span>
         <span class="button-save-valid" *ngIf="!userForm.invalid">Save</span>
       </button>
     </form>
@@ -48,7 +48,7 @@
   <div class="popup-user-out" [ngClass]="sll.statusPopup ? 'popup-user-in':''">
     <span class="popup-title-wrap">
       <h1 class="popup-title-logout">Welcome {{userName}}</h1>
-      <img class="popup-img-logout" (click)="isFormRegistartion()"
+      <img class="popup-img-logout" (click)="isFormRegistration()"
         src="https://us.123rf.com/450wm/faysalfarhan/faysalfarhan1710/faysalfarhan171011434/88836773-logout-isolated-on-elegant-red-round-button-abstract-illustration.jpg?ver=6"
         alt="">
     </span>
