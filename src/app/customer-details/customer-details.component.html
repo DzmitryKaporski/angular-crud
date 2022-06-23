@@ -1,0 +1,33 @@
+<h3 class="py-3">Add customer</h3>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div class="mb-3">
+    <label class="form-label" for="nmae">*Name: </label>
+    <span *ngIf="form.get('name')?.hasError('minlength')" class="alert alert-danger">
+      Minlength 4 symbol
+    </span>
+    <input class="form-control" formControlName="name" type="text" id="nmae" placeholder="" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="email">*E-mail: </label>
+    <span *ngIf="form.get('email')?.hasError('pattern')" class="alert alert-danger">
+      example format: example@mail.com
+    </span>
+    <input class="form-control" formControlName="email" type="email" id="email" placeholder="" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="mobile">*Mobile: </label>
+    <span *ngIf="form.get('mobile')?.hasError('pattern')" class="alert alert-danger">
+      example format: +375(33)123-45-67
+    </span>
+    <input class="form-control" formControlName="mobile" type="tel" id="mobile" placeholder="" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="location">*Location:</label>
+    <input class="form-control" formControlName="location" type="text" id="location" placeholder="" />
+  </div>
+  <button type="submit" class="submit" [disabled]="form.invalid">
+    <span *ngIf="form.invalid">Fields with an asterisk are required</span>
+    <span *ngIf="!form.invalid">Submit</span>
+  </button>
+</form>
