@@ -1,0 +1,77 @@
+<h3 class="py-3">Customers-list</h3>
+
+<table class="table table-striped">
+  <ng-container *ngTemplateOutlet="tableHead"></ng-container>
+
+  <tbody>
+    <tr *ngFor="let customer of httpService.customers; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <ng-container *ngTemplateOutlet="
+          isEditPos === i ? elseBlock : thenBlock;
+          context: { $implicit: customer }
+        "></ng-container>
+      <ng-container *ngTemplateOutlet="
+          customerControlsBlock;
+          context: { customer: customer, index: i }
+        "></ng-container>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #tableHead>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+</ng-template>
+
+<ng-template #thenBlock let-customer>
+  <td>{{ customer.name }}</td>
+  <td>{{ customer.email }}</td>
+  <td>{{ customer.mobile }}</td>
+  <td>{{ customer.location }}</td>
+</ng-template>
+
+<ng-template #elseBlock let-customer>
+  <td>
+    <input #name (blur)="setValue('name', name.value, customer.name)" type="text" class="form-control"
+      value="{{ customer.name }}" />
+  </td>
+  <td>
+    <input (blur)="setValue('email', email.value, customer.email)" #email type="email" class="form-control"
+      value="{{ customer.email }}" />
+  </td>
+  <td>
+    <input (blur)="setValue('mobile', mobile.value, customer.mobile)" #mobile type="tel" class="form-control"
+      value="{{ customer.mobile }}" />
+  </td>
+  <td>
+    <input (blur)="setValue('location', location.value, customer.location)" #location type="text" class="form-control"
+      value="{{ customer.location }}" />
+  </td>
+</ng-template>
+
+<ng-template #customerControlsBlock let-customer="customer" let-i="index">
+  <td class="controls">
+    <button title="edit" (click)="editCustomer(i)" *ngIf="isEditPos !== i" class="btn btn-outline-info btn-sm ms-2"
+      type="button">
+      <i class="fas fa-edit"></i>
+    </button>
+    <button title="edit end" (click)="cancelEdit()" *ngIf="isEditPos === i" class="btn btn-outline-info btn-sm ms-2"
+      type="button">
+      <i class="fas fa-undo"></i>
+    </button>
+    <button title="save" (click)="saveCustomer(customer, i)" *ngIf="isEditPos === i"
+      class="btn btn-outline-info btn-sm ms-2" type="button">
+      <i class="fas fa-save"></i>
+    </button>
+    <button title="delete" (click)="deleteCustomer(customer)" class="btn btn-outline-info btn-sm ms-2" type="button">
+      <i class="fas fa-trash"></i>
+    </button>
+  </td>
+</ng-template>

@@ -1,0 +1,19 @@
+.controls {
+  text-align: right;
+}
+
+.form-control {
+  width: auto;
+}
+
+@media (max-width: 1300px) {
+
+  .form-control {
+    width: 100%;
+  }
+
+  .controls {
+    text-align: end;
+  }
+
+}

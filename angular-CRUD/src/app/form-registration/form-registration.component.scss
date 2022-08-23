@@ -1,0 +1,253 @@
+form .ng-valid {
+  border-bottom: solid 2px green;
+}
+
+form .ng-invalid {
+  border-bottom: solid 2px red;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  text-align: left;
+}
+
+.alert {
+  font-size: 13px;
+  color: green;
+}
+
+.alert-danger {
+  padding: 0;
+  font-size: 13px;
+  color: red;
+  background-color: white;
+  border: none;
+}
+
+.wrap-registration-form {
+  width: 40%;
+  margin: 8rem 0 8rem 0;
+
+  @media(max-width:1200px) {
+    width: 80%;
+  }
+}
+
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  width: 30rem;
+  border: none;
+  background-color: white;
+
+  @media(max-width:540px) {
+    width: 20rem;
+  }
+}
+
+.button-save {
+  width: 60%;
+  margin-top: 2rem;
+  padding: 0 2rem 0 2rem;
+  height: 4rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: white;
+  font-weight: normal;
+  font-size: 20px;
+  box-shadow: 0 20px 10px rgba(102, 101, 101, 0.47);
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
+    box-shadow: inset 0 -10px 10px 0 rgba(82, 71, 71, 0.301);
+  }
+
+  @media(max-width:600px) {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+.button-save-valid {
+  color: green;
+}
+
+.button-save-unValid {
+  color: red;
+}
+
+.buttonPassword {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1;
+  padding: 0;
+  border: none;
+  background-color: white;
+
+  &:hover {
+    color: grey;
+    cursor: pointer;
+  }
+}
+
+.alert {
+  margin: 0 0 0 1rem;
+  font-weight: bold;
+}
+
+.wrap-colum {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.opacity-danger {
+  opacity: 0;
+}
+
+.opacity-success {
+  opacity: 1;
+}
+
+.registration-success {
+  margin: -600px 1rem 0 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
+  position: relative;
+  animation-name: registration-success;
+  animation-fill-mode: forwards;
+}
+
+@keyframes registration-success {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: 600px;
+  }
+}
+
+.registration-danger {
+  margin: -600px 1rem 0 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
+  position: relative;
+  animation-name: registration-danger;
+  animation-duration: 1s;
+}
+
+@keyframes registration-danger {
+  from {
+    top: 600px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+.popup-user-out {
+  display: none;
+}
+
+.popup-user-in {
+  display: block;
+  margin: 38rem 0 0 75%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.title {
+  @media(max-width:1800px) {
+    display: none;
+  }
+}
+
+.popup-title-wrap {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  background-color: white;
+
+  @media(max-width:1800px) {
+    padding: 0.5rem 5rem 0.5rem 5rem;
+    margin: 0 0 0 -80%;
+  }
+
+  @media(max-width:600px) {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 0 0 0 -100%;
+  }
+}
+
+.popup-title-logout {
+  width: 23rem;
+
+  @media(max-width:700px) {
+    display: block;
+    margin: 0.5rem 1rem 0 0;
+    width: auto;
+    font-size: 20px;
+  }
+}
+
+.popup-img-logout {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100px;
+
+  @media(max-width:700px) {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.img-password {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+  width: 10px;
+  height: 10px;
+  background-size: cover;
+}
+
+.registration-danger-none {
+  display: none;
+}
