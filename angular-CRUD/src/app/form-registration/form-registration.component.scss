@@ -37,7 +37,6 @@ form {
   }
 }
 
-
 label {
   display: block;
   font-weight: bold;
@@ -54,9 +53,9 @@ input {
 }
 
 .button-save {
-  width: 60%;
   margin-top: 2rem;
   padding: 0 2rem 0 2rem;
+  width: 60%;
   height: 4rem;
   border: none;
   border-radius: 1rem;
@@ -121,7 +120,7 @@ input {
   opacity: 1;
 }
 
-.registration-success {
+.registration {
   margin: -600px 1rem 0 1rem;
   padding: 1rem;
   display: flex;
@@ -134,6 +133,9 @@ input {
   background-color: white;
   box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
   position: relative;
+}
+
+.registration-success {
   animation-name: registration-success;
   animation-fill-mode: forwards;
 }
@@ -149,18 +151,6 @@ input {
 }
 
 .registration-danger {
-  margin: -600px 1rem 0 1rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 700px;
-  border-radius: 1rem;
-  text-align: center;
-  background-color: white;
-  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.47);
-  position: relative;
   animation-name: registration-danger;
   animation-duration: 1s;
 }
@@ -175,7 +165,8 @@ input {
   }
 }
 
-.popup-user-out {
+.popup-user-out,
+.registration-danger-none {
   display: none;
 }
 
@@ -193,8 +184,12 @@ input {
 }
 
 .title {
-  @media(max-width:1800px) {
-    display: none;
+  margin-top: -35px;
+
+  & {
+    @media(max-width:1800px) {
+      display: none;
+    }
   }
 }
 
@@ -246,8 +241,4 @@ input {
   width: 10px;
   height: 10px;
   background-size: cover;
-}
-
-.registration-danger-none {
-  display: none;
 }

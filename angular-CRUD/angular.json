@@ -67,7 +67,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "customer-data:build:production"
+              "browserTarget": "customer-data:build:production",
             },
             "development": {
               "browserTarget": "customer-data:build:development"

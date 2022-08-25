@@ -1,4 +1,5 @@
-<div class="registration-success" [ngClass]="sll.statusRegistration ? 'registration-success':'registration-danger'">
+<div class="registration registration-success"
+  [ngClass]="sll.statusRegistration ? 'registration-success':'registration-danger'">
   <div class="wrap-registration-form" [ngClass]="sll.statusRegistration ? 'opacity-success':'opacity-danger'">
     <div class="title-registration">Registration</div>
     <form (submit)="onSubmit()" [formGroup]="userForm">
