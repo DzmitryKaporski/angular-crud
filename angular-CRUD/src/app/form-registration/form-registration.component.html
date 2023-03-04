@@ -14,24 +14,15 @@
         </label>
         <input formControlName="name" type="text" id="name" placeholder="{{ formPlaceholder.name }}" />
       </p>
-
       <p>
-        <button type="button" class="buttonPassword" (click)="showHidePassword()" *ngIf="userForm.value.password">
-          {{formLabels.password }}
-          <img class="img-password" src="https://img.icons8.com/ios/500/show-password.png" alt="see password" />
-          :
-          <span *ngIf="
-            userForm.get('password')?.hasError('minlength') &&
-            userForm.get('password')?.touched
-          " class="alert alert-danger">
-            Minlength 8 symbol
+        <label for="password">Password:
+          <span *ngIf="userForm.get('password')?.hasError('minlength') &&
+                    userForm.get('password')?.touched" class="alert alert-danger"> Minlength 8 symbol
           </span>
-        </button>
-        <label *ngIf="!userForm.value.password" for="password">Password: </label>
+        </label>
         <input formControlName="password" type="{{ typePassword }}" id="password"
           placeholder="{{ formPlaceholder.password }}" />
       </p>
-
       <p>
         <label for="mail">{{ formLabels.email }}:
           <span *ngIf="userForm.get('email')?.hasError('pattern')" class="alert alert-danger">
