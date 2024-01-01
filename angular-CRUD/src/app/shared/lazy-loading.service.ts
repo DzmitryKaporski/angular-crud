@@ -10,7 +10,7 @@ export class LazyLoadingService {
 
   constructor() { }
 
-  isFormRegistartion() {
+  isFormRegistration() {
     this.statusRegistration = !this.statusRegistration;
     this.statusPopup = !this.statusPopup;
   }
