@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -10,20 +10,13 @@ import { CustomersHostComponent } from './customers-host/customers-host.componen
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { FormRegistrationComponent } from './form-registration/form-registration.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    CustomerDetailsComponent,
-    CustomersListComponent,
-    CustomersHostComponent,
-    FormRegistrationComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        CustomerDetailsComponent,
+        CustomersListComponent,
+        CustomersHostComponent,
+        FormRegistrationComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
