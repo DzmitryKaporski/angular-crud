@@ -5,9 +5,10 @@ import { LazyLoadingService } from './../shared/lazy-loading.service';
 import { User } from '../shared/user';
 
 @Component({
-  selector: 'app-form-registration',
-  templateUrl: './form-registration.component.html',
-  styleUrls: ['./form-registration.component.scss']
+    selector: 'app-form-registration',
+    templateUrl: './form-registration.component.html',
+    styleUrls: ['./form-registration.component.scss'],
+    standalone: false
 })
 export class FormRegistrationComponent implements OnInit {
   typePassword: string = 'password';

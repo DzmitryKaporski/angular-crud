@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { LazyLoadingService } from './../shared/lazy-loading.service';
 
 @Component({
-  selector: 'app-customers-host',
-  templateUrl: './customers-host.component.html',
-  styleUrls: ['./customers-host.component.scss']
+    selector: 'app-customers-host',
+    templateUrl: './customers-host.component.html',
+    styleUrls: ['./customers-host.component.scss'],
+    standalone: false
 })
 export class CustomersHostComponent implements OnInit {
 

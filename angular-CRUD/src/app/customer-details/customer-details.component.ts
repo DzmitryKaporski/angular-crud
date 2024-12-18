@@ -4,9 +4,10 @@ import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../shared/http.service';
 
 @Component({
-  selector: 'app-customer-details',
-  templateUrl: './customer-details.component.html',
-  styleUrls: ['./customer-details.component.scss'],
+    selector: 'app-customer-details',
+    templateUrl: './customer-details.component.html',
+    styleUrls: ['./customer-details.component.scss'],
+    standalone: false
 })
 export class CustomerDetailsComponent implements OnInit {
 
