@@ -5,7 +5,7 @@ import { catchError, Observable, of } from 'rxjs';
 
 import { Customer } from './customer';
 
-const url = 'https://angular-crud-realtim-database-default-rtdb.asia-southeast1.firebasedatabase.app/'
+const url = 'https://dzmitrykaporski-angular-d012b-default-rtdb.firebaseio.com/'
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
 
 @Injectable({
